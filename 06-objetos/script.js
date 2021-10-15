@@ -59,3 +59,101 @@ var pessoa = {};
 
 console.log(typeof carro); // 'object'
 
+
+// DOT NOTATION GET
+// Acesse propriedades de um objeto utilizando o ponto .
+var menu = {
+  width: 800,
+  height: 50,
+  backgroundColor: '#84E',
+}
+
+var bg = menu.backgroundColor; // '#84E'
+
+
+// DOT NOTATION SET
+// Substitua o valor de uma propriedade utilizando . e o = após o nome da mesma.
+var menu = {
+  width: 800,
+  height: 50,
+  backgroundColor: '#84E',
+}
+
+menu.backgroundColor = '#000';
+console.log(menu.backgroundColor); // '#000'
+
+
+// ADICIONAR PROPRIEDADES E MÉTODOS
+// Basta adicionar um novo nome e definir o valor.
+var menu = {
+  width: 800,
+}
+
+menu.height = 50;
+menu.position = 'fixed';
+
+
+// PALAVRA-CHAVE THIS
+// this irá fazer uma referência ao próprio objeto.
+var height = 120;
+var menu = {
+  width: 800,
+  height: 50,
+  metadeHeight() {
+    return this.height / 2;
+  }
+}
+
+menu.metadeHeight(); // 25
+// sem o this, seria 60
+// this irá retornar o próprio objeto
+
+
+// PROTÓTIPO E HERANÇA
+// O objeto herda propriedades e métodos do objeto que foi utilizado para criar o mesmo.
+var menu = {
+  width: 800,
+}
+
+menu.hasOwnProperty('width') // true
+menu.hasOwnProperty('height') // false
+// hasOwnProperty é um método de Object
+
+
+// EXERCÍCIO
+// Crie um objeto com os seus dados pessoais
+// Deve possuir pelo menos duas propriedades nome e sobrenome
+var dados = {
+  nome: 'Gabriel',
+  sobrenome: 'Marques',
+  celular: 1111-1111,
+  idade: 30
+}
+
+// Crie um método no objeto anterior, que mostre o seu nome completo
+dados.nomeCompleto = function() {
+    return `${this.nome} ${this.sobrenome}`;
+  }
+
+// Modifique o valor da propriedade preco para 3000
+var carro = {
+  preco: 1000,
+  portas: 4,
+  marca: 'Audi',
+}
+
+carro.preco = 3000;
+
+// Crie um objeto de um cachorro que represente um labrador, preto com 10 anos, que late ao ver um homem
+var cachorro = {
+  raca: 'Labrador',
+  cor: 'preto',
+  idade: 10,
+  latir(pessoa) {
+    if(pessoa === 'homem') {
+      return 'Latir';
+    } else {
+      return 'Nada';
+    }
+  }
+}
